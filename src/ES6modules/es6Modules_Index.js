@@ -1,10 +1,8 @@
-import {anonymousFunctionExport} from './ES6modules/index.js';
-import {directObjectExport} from './ES6modules/index.js';
-import {classExport} from './ES6modules/index.js';
-// Import {myNamedFunction} from './ES6modules/index.js';
-// import {mystring} from './ES6modules/index.js';
+import {anonymousFunctionExport} from './index.js';
+import {directObjectExport} from './index.js';
+import {classExport} from './index.js';
 
-import * as myCommonLibrary from './ES6modules/index.js';
+import * as myCommonLibrary from './index.js';
 
 // 1. anonymousFunctionExport
 anonymousFunctionExport('Export');

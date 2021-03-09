@@ -2,6 +2,7 @@
   "name": "prototype_commonModule",
   "version": "1.0.0",
   "description": "export and import examples using CommonJS and ES6 module approaches",
+  "type": "commonjs",
   "homepage": "github",
   "repository": "git@github.com:nischalsource/prototype_commonModule.git",
   "author": {
@@ -13,7 +14,7 @@
     "src",
     "LICENSE"
   ],
-  "main": "src/es6Modules_Index.js",
+  "main": "dist/es6Modules_Index.js",
   "keywords": [
     "nodejs",
     "yeoman",
@@ -21,7 +22,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist/*",
-    "build": "npm run clean && babel src/commonJSmodules/* src/ES6modules/* src/*.js --out-dir dist/",
+    "build": "npm run clean && babel src/ES6modules/* --out-dir dist/",
     "pretest": "eslint .",
     "test": "jest"
   },
@@ -29,10 +30,10 @@
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "babel-plugin-add-module-exports": "^1.0.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "coveralls": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^3.6.0",
@@ -43,7 +44,7 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "@babel/runtime": "^7.13.10"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -51,17 +52,16 @@
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
+          "modules": "cjs",
+          "useBuiltIns": "usage",
           "targets": {
             "node": "current"
-          }
+          },
+          "debug": true
         }
       ]
-    ],
-    "plugins": [
-      "add-module-exports",
-      "transform-runtime"
     ]
   },
   "lint-staged": {

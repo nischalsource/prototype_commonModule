@@ -148,4 +148,4 @@ typings/
 
 # build
 bin/*
-dist/*
+#dist/*

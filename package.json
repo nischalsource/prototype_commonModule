@@ -2,19 +2,17 @@
   "name": "prototype_commonModule",
   "version": "1.0.0",
   "description": "export and import examples using CommonJS and ES6 module approaches",
-  "type": "commonjs",
   "homepage": "github",
   "repository": "git@github.com:nischalsource/prototype_commonModule.git",
   "author": {
     "name": "Nischal Bachu",
-    "email": "nischal.bachu@gmail.com",
-    "url": ""
+    "email": "nischal.bachu@gmail.com"
   },
   "files": [
     "src",
     "LICENSE"
   ],
-  "main": "dist/es6Modules_Index.js",
+  "main": "dist/main.bundle.js",
   "keywords": [
     "nodejs",
     "yeoman",
@@ -22,7 +20,8 @@
   ],
   "scripts": {
     "clean": "rm -rf dist/*",
-    "build": "npm run clean && babel src/ES6modules/* --out-dir dist/",
+    "build": "webpack -w --config ./webpack.config.js",
+    "start": "node dist/main.bundle.js && node src/commonjsmodules_index.js",
     "pretest": "eslint .",
     "test": "jest"
   },
@@ -34,6 +33,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.13.8",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
     "coveralls": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^3.6.0",
@@ -41,28 +41,17 @@
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.13.10"
+    "@babel/runtime": "^7.13.10",
+    "core-js": "^2.6.12"
   },
   "engines": {
     "npm": ">= 4.0.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": "cjs",
-          "useBuiltIns": "usage",
-          "targets": {
-            "node": "current"
-          },
-          "debug": true
-        }
-      ]
-    ]
   },
   "lint-staged": {
     "*.js": [

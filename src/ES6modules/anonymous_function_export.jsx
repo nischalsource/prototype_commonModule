@@ -1,5 +1,5 @@
 export default function (msg) {
-  console.log('1. Anonymous Function ' + msg);
+  console.log('1. ES6 Anonymous Function ' + msg);
 }
 
 /*

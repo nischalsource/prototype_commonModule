@@ -1,5 +1,5 @@
 export default {
-  firstName: '2. Direct Object ',
+  firstName: '2. ES6 Direct Object ',
   lastName: 'Export'
 };
 

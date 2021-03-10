@@ -1,5 +1,5 @@
 module.exports = function (msg) {
-  console.log('1. Anonymous Function ' + msg);
+  console.log('1. CJS Anonymous Function ' + msg);
 };
 
 /*

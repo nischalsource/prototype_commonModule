@@ -7,11 +7,11 @@ myFunctions.anonymousFunctionExport('Export');
 console.log(myFunctions.directObjectExport.firstName + ' ' + myFunctions.directObjectExport.lastName);
 
 // 3. functionAsClassExport
-var person = new myFunctions.functionAsClassExport('3. Function as a Class ', 'Export');
+var person = new myFunctions.functionAsClassExport('3. CJS Function as a Class ', 'Export');
 console.log(person.fullName());
 
 // 4. functionExport
-myFunctions.functionExport.log('4. Function export');
+myFunctions.functionExport.log('4. CJS Function export');
 
 // 5. literalExport
 console.log(myFunctions.literalExport);

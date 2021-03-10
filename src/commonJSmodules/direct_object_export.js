@@ -1,5 +1,5 @@
 module.exports = {
-  firstName: '2. Direct Object ',
+  firstName: '2. CJS Direct Object ',
   lastName: 'Export'
 };
 /*
